@@ -1,6 +1,6 @@
 import flet as ft
 from time import sleep
-from .types import (
+from Types.types import (
     position,
     configs,
 )

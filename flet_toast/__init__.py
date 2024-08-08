@@ -1,4 +1,4 @@
-from .toastfy import toast_flet
+from _toastfy._toastfy import flet_toast
 
 """
 ```

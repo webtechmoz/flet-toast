@@ -8,7 +8,7 @@ Aqui está um exemplo de como usar a classe `Toastfy` em uma aplicação Flet:
 
 ```python
 import flet as ft
-from flet_toastfy import Toastfy
+from flet_toast import flet_toast
 
 def main(page: ft.Page):
     page.title = page.route
@@ -30,7 +30,7 @@ def main(page: ft.Page):
                                         icon_size=25,
                                         icon_color=ft.colors.BLUE,
                                         top=40,
-                                        on_click=lambda e: Toastfy().success(page, 'Testado bem mesmo', 'top_left')
+                                        on_click=lambda e: flet_toast.success(page, 'Testado bem mesmo', 'top_left')
                                     )
                                 ]
                             )
