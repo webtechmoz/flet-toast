@@ -1,13 +1,7 @@
 import flet as ft
-from Toast.Toast import (
-    Toast,
-    creating_toast,
-)
-from Types.types import (
-    color,
-    icons,
-    position
-)
+
+from ..Toast.Toast import Toast, creating_toast
+from ..Types.types import color, icons, position
 
 class Toastfy:
 

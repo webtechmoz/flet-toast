@@ -1,17 +1,31 @@
-# Toastfy
+# Toastfy - Biblioteca de Notificações Toast para Flet
 
-A classe `Toastfy` fornece uma interface para criar e exibir diferentes tipos de notificações toast em uma aplicação Flet. Esta classe oferece métodos para toasts de sucesso, erro e aviso, incluindo a possibilidade de personalizar a posição dessas notificações.
+`Toastfy` é uma biblioteca poderosa e flexível que permite a criação e exibição de notificações do tipo "toast" em aplicações Flet. Com `Toastfy`, você pode facilmente adicionar toasts de sucesso, erro e aviso às suas aplicações, personalizando a posição e o comportamento das notificações.
 
+## Funcionalidades
+
+- **Toasts de Sucesso, Erro e Aviso**: Notificações específicas para diferentes cenários.
+- **Posicionamento Personalizável**: Escolha entre várias posições predefinidas na tela.
+- **Integração Simples**: Fácil de integrar e usar em qualquer aplicação Flet.
+
+![Diferentes toats gerados](assets/float_toast.png)
+
+## Instalação
+
+Para instalar a biblioteca `Toastfy`, execute:
+
+```bash
+pip install flet_toast
+```
 ## Exemplo de Uso
 
-Aqui está um exemplo de como usar a classe `Toastfy` em uma aplicação Flet:
-
+Abaixo está um exemplo simples de como utilizar a classe Toastfy em uma aplicação Flet:
 ```python
 import flet as ft
 from flet_toast import flet_toast
 
 def main(page: ft.Page):
-    page.title = page.route
+    page.title = "Exemplo de Toastfy"
 
     def router(route):
         page.views.clear()
@@ -30,7 +44,11 @@ def main(page: ft.Page):
                                         icon_size=25,
                                         icon_color=ft.colors.BLUE,
                                         top=40,
-                                        on_click=lambda e: flet_toast.success(page, 'Testado bem mesmo', 'top_left')
+                                        on_click=lambda e: flet_toast.success(
+                                            page, 
+                                            'Operação concluída com sucesso!', 
+                                            'top_left'
+                                        )
                                     )
                                 ]
                             )
@@ -39,7 +57,6 @@ def main(page: ft.Page):
                 )
             )
 
-        page.title = page.route
         page.update()
 
     page.on_route_change = router
@@ -49,39 +66,40 @@ if __name__ == '__main__':
     ft.app(target=main)
 ```
 
-## Métodos
+## Documentação
 
-### success(page: ft.Page, message: str, position: position = position.BOTTOM_RIGHT) -> Toast
+### Métodos
+`success(page: ft.Page, message: str, position: position = position.BOTTOM_RIGHT) -> Toast`
 Exibe uma notificação toast de sucesso.
 
-**page**: A página Flet onde o toast será exibido.
-**message**: A mensagem a ser exibida no toast.
-**position**: A posição do toast na tela. O padrão é BOTTOM_RIGHT.
+- page: A página Flet onde o toast será exibido.
+- message: A mensagem a ser exibida no toast.
+- position: A posição do toast na tela. O padrão é BOTTOM_RIGHT.
 
-### error(page: ft.Page, message: str, position: position = position.BOTTOM_RIGHT) -> Toast
+`rror(page: ft.Page, message: str, position: position = position.BOTTOM_RIGHT) -> Toast`
 Exibe uma notificação toast de erro.
 
-**page**: A página Flet onde o toast será exibido.
-**message**: A mensagem a ser exibida no toast.
-**position**: A posição do toast na tela. O padrão é BOTTOM_RIGHT.
+- page: A página Flet onde o toast será exibido.
+- message: A mensagem a ser exibida no toast.
+- position: A posição do toast na tela. O padrão é BOTTOM_RIGHT.
 
-### warning(page: ft.Page, message: str, position: position = position.BOTTOM_RIGHT) -> Toast
+`warning(page: ft.Page, message: str, position: position = position.BOTTOM_RIGHT) -> Toast`
 Exibe uma notificação toast de aviso.
 
-**page**: A página Flet onde o toast será exibido.
-**message**: A mensagem a ser exibida no toast.
-**position**: A posição do toast na tela. O padrão é BOTTOM_RIGHT.
+- page: A página Flet onde o toast será exibido.
+- message: A mensagem a ser exibida no toast.
+- position: A posição do toast na tela. O padrão é BOTTOM_RIGHT.
 
-### __position_string__(pos: position) -> str
-Converte um enum ou string de posição para sua representação em string.
+Enum `position`
+position define as possíveis posições para exibir as notificações toast na tela. As opções incluem:
 
-**pos**: O enum ou string de posição.
+- `top_left`: Canto superior esquerdo.
+- `top_right`: Canto superior direito.
+- `bottom_left`: Canto inferior esquerdo.
+- `bottom_right`: Canto inferior direito (padrão).
 
-## Atributos
+## Licença
+Este projeto está licenciado sob os termos da licença MIT. Veja o arquivo LICENCE para mais detalhes.
 
-### position
-Enum contendo possíveis posições para notificações toast.
-    1. *top_left* - posiciona no canto superior esquerdo da pagina
-    2. *top_right* - posiciona no canto superior direito da pagina
-    1. *bottom_left* - posiciona no canto inferior esquerdo da pagina
-    2. *bottom_right* - posiciona no canto inferior direito da pagina
+## Contribuições
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests no repositório do GitHub.

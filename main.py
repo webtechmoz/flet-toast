@@ -1,9 +1,5 @@
-from ._toastfy._toastfy import flet_toast
-
-"""
-```
 import flet as ft
-from Toast.toastfy import toast_flet
+from flet_toast import flet_toast
 
 def main(page: ft.Page):
     page.title = page.route
@@ -15,17 +11,17 @@ def main(page: ft.Page):
             page.views.append(
                 ft.View(
                     route='/',
-                    bgcolor=ft.colors.SECONDARY,
+                    bgcolor=ft.colors.WHITE,
                     controls=[
                         ft.SafeArea(
-                            content= ft.Stack(
+                            content=ft.Stack(
                                 controls=[
                                     ft.IconButton(
                                         icon=ft.icons.ANIMATION,
                                         icon_size=25,
                                         icon_color=ft.colors.BLUE,
                                         top=40,
-                                        on_click= lambda e: toast_flet.sucess(page, 'Testado bem mesmo e aprovado ldjhibdu dkd', 'top_left')
+                                        on_click=lambda e: flet_toast.error(page, 'Testado bem mesmo', 'bottom_left')
                                     )
                                 ]
                             )
@@ -33,14 +29,12 @@ def main(page: ft.Page):
                     ]
                 )
             )
-        
+
         page.title = page.route
         page.update()
-    
+
     page.on_route_change = router
     page.go(page.route)
 
 if __name__ == '__main__':
-    ft.app(target=main)
-```
-"""
+    ft.app(target=main, view=ft.WEB_BROWSER)

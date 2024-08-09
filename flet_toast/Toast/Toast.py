@@ -1,9 +1,7 @@
 import flet as ft
 from time import sleep
-from Types.types import (
-    position,
-    configs,
-)
+
+from ..Types.types import position, configs
 
 class Toast(ft.Stack):
     def __init__(
