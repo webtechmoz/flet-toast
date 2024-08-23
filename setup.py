@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='flet-toast',
-    version='0.2.0',
+    version='0.2.2.dev823',
     author='Web Tech Moz',
     author_email='zoidycine@gmail.com',
     description='Cria interface para exibir notificações na tela',
@@ -18,7 +18,7 @@ setup(
         'Operating System :: OS Independent',
     ],
     install_requires=[
-        "flet"
+        "flet-embed"
     ],
     python_requires='>=3.10',
 )

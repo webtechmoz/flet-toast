@@ -76,7 +76,7 @@ Exibe uma notificação toast de sucesso.
 - message: A mensagem a ser exibida no toast.
 - position: A posição do toast na tela. O padrão é BOTTOM_RIGHT.
 
-`rror(page: ft.Page, message: str, position: position = position.BOTTOM_RIGHT) -> Toast`
+`error(page: ft.Page, message: str, position: position = position.BOTTOM_RIGHT) -> Toast`
 Exibe uma notificação toast de erro.
 
 - page: A página Flet onde o toast será exibido.
