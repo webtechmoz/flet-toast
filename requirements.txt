@@ -1,1 +1,1 @@
-flet-embed
+flet>=0.23.2

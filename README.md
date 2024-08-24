@@ -8,7 +8,7 @@
 - **Posicionamento Personalizável**: Escolha entre várias posições predefinidas na tela.
 - **Integração Simples**: Fácil de integrar e usar em qualquer aplicação Flet.
 
-![Diferentes toats gerados](assets/float_toast.png)
+![Diferentes toats gerados](https://raw.githubusercontent.com/webtechmoz/flet-toast/master/assets/float_toast.png)
 
 ## Instalação
 
