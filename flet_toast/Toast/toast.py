@@ -1,10 +1,6 @@
-try:
-    from Controls.controls import Toast, ft
-    from Types.types import Position
-
-except:
-    from ..Controls.controls import Toast, ft
-    from ..Types.types import Position
+from ..Controls.controls import Toast
+from ..Controls.controls import ft
+from ..Types.types import Position
 
 class FletToast:
     """

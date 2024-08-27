@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='flet-toast',
-    version='0.3.1.dev827',
+    version='0.3.1',
     author='Web Tech Moz',
     author_email='zoidycine@gmail.com',
     description='Cria interface para exibir notificações na tela',

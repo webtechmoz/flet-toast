@@ -80,7 +80,7 @@ if __name__ == '__main__':
 ## Documentação
 
 ### Métodos
-**success**
+**success**:
 Exibe uma notificação toast de sucesso.
 
 - `page`: A página Flet onde o toast será exibido.
@@ -88,7 +88,7 @@ Exibe uma notificação toast de sucesso.
 - `position`: A posição do toast na tela.
 - `duration`: A duração da notificação toast
 
-**error**
+**error**:
 Exibe uma notificação toast de erro.
 
 - `page`: A página Flet onde o toast será exibido.
@@ -96,7 +96,7 @@ Exibe uma notificação toast de erro.
 - `position`: A posição do toast na tela.
 - `duration`: A duração da notificação toast
 
-**warning**
+**warning**:
 Exibe uma notificação toast de aviso.
 
 - `page`: A página Flet onde o toast será exibido.
@@ -105,7 +105,7 @@ Exibe uma notificação toast de aviso.
 - `duration`: A duração da notificação toast
 
 ### Propriedas
-**position**
+**position**:
 position define as possíveis posições para exibir as notificações toast na tela. As opções incluem:
 
 - `top_left`: Canto superior esquerdo.
@@ -113,7 +113,7 @@ position define as possíveis posições para exibir as notificações toast na 
 - `bottom_left`: Canto inferior esquerdo.
 - `bottom_right`: Canto inferior direito (padrão).
 
-**duration**
+**duration**:
 Define o tempo em que a notificação toast estará visivel na tela. Este deve ser um número inteiro 
 
 ## Licença

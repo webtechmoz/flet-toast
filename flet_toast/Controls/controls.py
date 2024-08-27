@@ -1,11 +1,7 @@
 import flet as ft
 import asyncio
 from time import sleep
-try:
-    from Types.types import Position
-
-except:
-    from ..Types.types import Position
+from ..Types.types import Position
 
 class Container(ft.Container):
     def __init__(
