@@ -1,1 +1,0 @@
-from ._toastfy import flet_toast
