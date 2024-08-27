@@ -1,1 +1,5 @@
-from .Toast import Toast, creating_toast
+try:
+    from Toast.Toast import flet_toast
+
+except:
+    from ..Toast.Toast import flet_toast

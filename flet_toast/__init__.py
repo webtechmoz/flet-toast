@@ -1,8 +1,8 @@
 try:
-    from Toast.toast import flet_toast
+    from Toast.Toast import flet_toast
 
 except:
-    from .Toast.toast import flet_toast
+    from .Toast.Toast import flet_toast
 
 """
 Crie toasts personalizados usando a biblioteca flet do python.
