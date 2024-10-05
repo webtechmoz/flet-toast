@@ -2,6 +2,7 @@ from ..Controls.controls import Toast
 from ..Controls.controls import ft
 from ..Types.types import Position
 
+
 class FletToast:
     """
     Crie toasts personalizados usando a biblioteca flet do python.
@@ -18,6 +19,7 @@ class FletToast:
         position: Position,
         duration: int = 3
     ) -> Toast:
+        
         toast = Toast(
             page=page,
             color=ft.colors.BLUE,
@@ -26,7 +28,7 @@ class FletToast:
             position=position,
             duration=duration
         )
-    
+
         return toast
     
     def warning(
@@ -36,10 +38,11 @@ class FletToast:
         position: Position,
         duration: int = 3
     ) -> Toast:
+        
         toast = Toast(
             page=page,
             color=ft.colors.PURPLE,
-            text=message,
+            message=message,
             icon=ft.icons.WARNING_ROUNDED,
             position=position,
             duration=duration
@@ -54,6 +57,7 @@ class FletToast:
         position: Position,
         duration: int = 3
     ) -> Toast:
+        
         toast = Toast(
             page=page,
             color=ft.colors.RED,

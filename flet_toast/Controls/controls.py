@@ -142,10 +142,18 @@ class Toast(ft.Stack):
             self.bottom = position_spacing
             self.right = position_spacing
         
-        asyncio.run(self.open_toast())
+        self.sync_open_toast()
         
     def clicked(self, e: ft.ControlEvent):
         self.close_toast()
+    
+    def sync_open_toast(self):
+        try:
+            loop = asyncio.get_event_loop()
+            loop.create_task(self.open_toast())
+        
+        except RuntimeError:
+            asyncio.run(self.open_toast())
     
     async def open_toast(self):
         self.Page.overlay.append(self)
@@ -157,7 +165,7 @@ class Toast(ft.Stack):
             width -= 1
             self.controls[1].width = width
             self.Page.update()
-            sleep(redution)
+            await asyncio.sleep(redution)
         
         self.close_toast()
     

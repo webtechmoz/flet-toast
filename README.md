@@ -114,7 +114,10 @@ position define as possíveis posições para exibir as notificações toast na 
 - `bottom_right`: Canto inferior direito (padrão).
 
 **duration**:
-Define o tempo em que a notificação toast estará visivel na tela. Este deve ser um número inteiro 
+Define o tempo em que a notificação toast estará visivel na tela. Este deve ser um número inteiro
+
+## Novidades 0.4.0
+- Agora os toats são gerados de forma assíncrona de modo a não bloquear a execução normal do programa.
 
 ## Licença
 Este projeto está licenciado sob os termos da licença MIT. Veja o arquivo LICENCE para mais detalhes.
