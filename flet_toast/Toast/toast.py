@@ -42,7 +42,7 @@ class FletToast:
         toast = Toast(
             page=page,
             color=ft.colors.PURPLE,
-            message=message,
+            text=message,
             icon=ft.icons.WARNING_ROUNDED,
             position=position,
             duration=duration
