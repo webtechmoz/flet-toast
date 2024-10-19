@@ -165,7 +165,7 @@ class Toast(ft.Stack):
             width -= 1
             self.controls[1].width = width
             self.Page.update()
-            await asyncio.sleep(redution)
+            sleep(redution)
         
         self.close_toast()
     
