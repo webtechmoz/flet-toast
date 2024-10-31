@@ -3,8 +3,12 @@ from ..Controls.controls import ft
 from ..Types.types import Position
 
 class FletToast:
+    
     """
     Crie toasts personalizados usando a biblioteca flet do python.
+    
+    ---
+    Consulte a documentação pelo site: https://pypi.org/project/flet-toast/
     """
 
     @property

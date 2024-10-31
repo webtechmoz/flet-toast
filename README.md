@@ -116,6 +116,9 @@ position define as possíveis posições para exibir as notificações toast na 
 **duration**:
 Define o tempo em que a notificação toast estará visivel na tela. Este deve ser um número inteiro
 
+## Novidades 0.5.0
+- Agrupamento de toasts visíveis
+
 ## Novidades 0.4.2
 - Correção do bug quando o toast é iniciado de forma assíncrona.
 

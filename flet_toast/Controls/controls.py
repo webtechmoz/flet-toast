@@ -61,6 +61,13 @@ class Container(ft.Container):
         self.alignment = ft.alignment.center_left
 
 class Toast(ft.Stack):
+    toast_list = ft.Column(
+            controls=[
+
+            ],
+            scroll=ft.ScrollMode.ADAPTIVE
+        )
+
     def __init__(
         self,
         page: ft.Page,
@@ -127,20 +134,32 @@ class Toast(ft.Stack):
         ]
 
         if self.position == 'top_left':
-            self.top = position_spacing
-            self.left = position_spacing
+            Toast.toast_list.top = position_spacing
+            Toast.toast_list.left = position_spacing
+
+            Toast.toast_list.right = None
+            Toast.toast_list.bottom = None
         
         elif self.position == 'top_right':
-            self.top = position_spacing
-            self.right = position_spacing
+            Toast.toast_list.top = position_spacing
+            Toast.toast_list.right = position_spacing
+
+            Toast.toast_list.left = None
+            Toast.toast_list.bottom = None
         
         elif self.position == 'bottom_left':
-            self.bottom = position_spacing
-            self.left = position_spacing
+            Toast.toast_list.bottom = position_spacing
+            Toast.toast_list.left = position_spacing
+
+            Toast.toast_list.right = None
+            Toast.toast_list.top = None
         
         elif self.position == 'bottom_right':
-            self.bottom = position_spacing
-            self.right = position_spacing
+            Toast.toast_list.bottom = position_spacing
+            Toast.toast_list.right = position_spacing
+
+            Toast.toast_list.top = None
+            Toast.toast_list.left = None
         
         self.sync_open_toast()
         
@@ -156,7 +175,10 @@ class Toast(ft.Stack):
             asyncio.run(self.open_toast())
     
     async def open_toast(self):
-        self.Page.overlay.append(self)
+        Toast.toast_list.controls.append(self)
+
+        if Toast.toast_list not in self.Page.overlay:
+            self.Page.overlay.append(Toast.toast_list)
 
         width = self.width
         redution = (1/self.width)*self.duration
@@ -171,7 +193,11 @@ class Toast(ft.Stack):
     
     def close_toast(self):
         try:
-            self.Page.overlay.remove(self)
+            Toast.toast_list.controls.remove(self)
+
+            if not Toast.toast_list.controls:
+                self.Page.overlay.remove(Toast.toast_list)
+
             self.Page.update()
 
         except:
