@@ -6,14 +6,14 @@ from ..Types.types import Position
 class Container(ft.Container):
     def __init__(
         self,
-        bgcolor: ft.colors,
-        color: ft.colors,
+        bgcolor: ft.Colors,
+        color: ft.Colors,
         width: float,
         height: float,
         border_radius: float,
         text: str,
         size: float,
-        icon: ft.icons,
+        icon: ft.Icons,
         icon_size: float
     ):
         if text[1:-1].islower() == True:
@@ -71,15 +71,15 @@ class Toast(ft.Stack):
     def __init__(
         self,
         page: ft.Page,
-        color: ft.colors,
+        color: ft.Colors,
         text: str,
-        icon: ft.icons,
+        icon: ft.Icons,
         position: Position,
         duration: int,
         icon_size: float = 25,
         size: float = 13,
         border_radius: float = 6,
-        bgcolor: ft.colors = ft.colors.with_opacity(0.8, ft.colors.WHITE),
+        bgcolor: ft.Colors = ft.Colors.with_opacity(0.8, ft.Colors.WHITE),
         position_spacing: int = 10
     ):
         try:
@@ -88,10 +88,9 @@ class Toast(ft.Stack):
         except:
             self.position = position
         
-        self.Page = page
-        self.duration = duration
-        
         super().__init__()
+        self.page = page
+        self.duration = duration
         self.width = 280
         self.height = 45
         self.controls = [
@@ -115,7 +114,7 @@ class Toast(ft.Stack):
             ),
             ft.Container(
                 content=ft.Icon(
-                    name=ft.icons.CLOSE,
+                    name=ft.Icons.CLOSE,
                     color=color,
                     size=14,
                 ),
@@ -125,7 +124,7 @@ class Toast(ft.Stack):
                 alignment=ft.alignment.center,
                 border=ft.border.all(
                     width=2,
-                    color=ft.colors.with_opacity(0.4, color)
+                    color=ft.Colors.with_opacity(0.4, color)
                 ),
                 top=3,
                 right=3,
@@ -177,8 +176,8 @@ class Toast(ft.Stack):
     async def open_toast(self):
         Toast.toast_list.controls.append(self)
 
-        if Toast.toast_list not in self.Page.overlay:
-            self.Page.overlay.append(Toast.toast_list)
+        if Toast.toast_list not in self.page.overlay:
+            self.page.overlay.append(Toast.toast_list)
 
         width = self.width
         redution = (1/self.width)*self.duration
@@ -186,7 +185,7 @@ class Toast(ft.Stack):
         while width > 0:
             width -= 1
             self.controls[1].width = width
-            self.Page.update()
+            self.page.update()
             sleep(redution)
         
         self.close_toast()
@@ -196,9 +195,9 @@ class Toast(ft.Stack):
             Toast.toast_list.controls.remove(self)
 
             if not Toast.toast_list.controls:
-                self.Page.overlay.remove(Toast.toast_list)
+                self.page.overlay.remove(Toast.toast_list)
 
-            self.Page.update()
+            self.page.update()
 
         except:
             pass

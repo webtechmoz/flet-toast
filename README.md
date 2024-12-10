@@ -117,6 +117,9 @@ position define as possíveis posições para exibir as notificações toast na 
 Define o tempo em que a notificação toast estará visivel na tela. Este deve ser um número inteiro
 
 ## Novidades 0.5.0
+- Ajustamento dos toasts para a versão 0.25.1 do flet
+
+## Novidades 0.5.0
 - Agrupamento de toasts visíveis
 
 ## Novidades 0.4.2

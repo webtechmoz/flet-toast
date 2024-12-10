@@ -11,23 +11,19 @@ class FletToast:
     Consulte a documentação pelo site: https://pypi.org/project/flet-toast/
     """
 
-    @property
-    def Position(self) -> Position:
-        return Position
-
     def sucess(
         self,
         page: ft.Page,
         message: str,
-        position: Position,
+        position: Position = Position.TOP_RIGHT,
         duration: int = 3
     ) -> Toast:
         
         toast = Toast(
             page=page,
-            color=ft.colors.BLUE,
+            color=ft.Colors.BLUE,
             text=message,
-            icon=ft.icons.CHECK_CIRCLE_OUTLINED,
+            icon=ft.Icons.CHECK_CIRCLE_OUTLINED,
             position=position,
             duration=duration
         )
@@ -38,15 +34,15 @@ class FletToast:
         self,
         page: ft.Page,
         message: str,
-        position: Position,
+        position: Position = Position.TOP_RIGHT,
         duration: int = 3
     ) -> Toast:
         
         toast = Toast(
             page=page,
-            color=ft.colors.PURPLE,
+            color=ft.Colors.PURPLE,
             text=message,
-            icon=ft.icons.WARNING_ROUNDED,
+            icon=ft.Icons.WARNING_ROUNDED,
             position=position,
             duration=duration
         )
@@ -57,15 +53,15 @@ class FletToast:
         self,
         page: ft.Page,
         message: str,
-        position: Position,
+        position: Position = Position.TOP_RIGHT,
         duration: int = 3
     ) -> Toast:
         
         toast = Toast(
             page=page,
-            color=ft.colors.RED,
+            color=ft.Colors.RED,
             text=message,
-            icon=ft.icons.ERROR,
+            icon=ft.Icons.ERROR,
             position=position,
             duration=duration
         )
